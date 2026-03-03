@@ -105,6 +105,17 @@ a {
     text-decoration: none;
 }
 
+/* Prevent iOS from coloring detected phone/date/email links */
+a[x-apple-data-detectors],
+a[href^="tel"],
+a[href^="sms"],
+a[href^="mailto"] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -258,12 +269,17 @@ img {
     height: 240px;
     border-radius: 50%;
     overflow: hidden;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 5px solid var(--first-color);
     box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, 0.3);
     background-color: transparent;
+    /* iOS Safari: keep border-radius clip reliable */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    clip-path: circle(50% at 50% 50%);
 }
 
 .home__img {
@@ -271,7 +287,9 @@ img {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: drop-shadow(0 4px 16px hsla(0, 0%, 0%, 0.2));
+    border-radius: 50%;
+    /* Avoid iOS overflow+filter rendering bug */
+    filter: none;
 }
 
 .home__social {
