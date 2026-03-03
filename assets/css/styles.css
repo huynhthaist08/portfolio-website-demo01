@@ -197,7 +197,9 @@ img {
     position: relative;
     color: var(--white-color);
     font-weight: var(--font-medium);
-    transition: color 0.4s, width 0.4s;
+    transition:
+        color 0.4s,
+        width 0.4s;
 }
 
 .nav__link::after {
@@ -254,18 +256,21 @@ img {
 .home__image {
     width: 240px;
     height: 240px;
-    background-color: var(--white-color);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     border: 5px solid var(--first-color);
     box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, 0.3);
+    background-color: transparent;
 }
 
 .home__img {
-    width: 200px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     filter: drop-shadow(0 4px 16px hsla(0, 0%, 0%, 0.2));
 }
 
@@ -282,7 +287,9 @@ img {
 .home__link {
     color: var(--white-color);
     font-size: 1.5rem;
-    transition: transform 0.4s, color 0.4s;
+    transition:
+        transform 0.4s,
+        color 0.4s;
 }
 
 .home__link:hover {
@@ -321,7 +328,9 @@ img {
     font-weight: var(--font-medium);
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
-    transition: box-shadow 0.4s, color 0.4s;
+    transition:
+        box-shadow 0.4s,
+        color 0.4s;
 }
 
 .button:hover {
@@ -385,7 +394,10 @@ img {
     font-weight: var(--font-regular);
     border: 2px solid var(--body-color);
     cursor: default;
-    transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+    transition:
+        background-color 0.4s,
+        color 0.4s,
+        border-color 0.4s;
 }
 
 .about__item:hover {
@@ -423,6 +435,7 @@ img {
     overflow: hidden;
     box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.5);
     transition: box-shadow 0.4s;
+    height: 220px;
 }
 
 .projects__data {
@@ -442,6 +455,12 @@ img {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s;
+}
+
+.projects_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .projects__title {
@@ -544,7 +563,9 @@ img {
 }
 
 .contact__input:autofill {
-    transition: background-color 6000s, color 6000s;
+    transition:
+        background-color 6000s,
+        color 6000s;
 }
 
 .contact__area {
@@ -586,7 +607,9 @@ img {
 .contact__link {
     color: var(--white-color);
     font-size: 1.5rem;
-    transition: transform 0.4s, color 0.4s;
+    transition:
+        transform 0.4s,
+        color 0.4s;
 }
 
 .contact__link:hover {
@@ -611,7 +634,7 @@ img {
 
 .footer__logo {
     color: var(--white-color);
-    font-size: var(--h1-font-size);
+    font-size: var(--h2-font-size);
     font-weight: var(--font-semi-bold);
     justify-self: center;
     margin-bottom: 1rem;
@@ -686,7 +709,9 @@ img {
     font-size: 1.25rem;
     border-radius: 0.25rem;
     z-index: var(--z-tooltip);
-    transition: bottom 0.4s, transform 0.4s;
+    transition:
+        bottom 0.4s,
+        transform 0.4s;
 }
 
 .scrollup:hover {
@@ -711,7 +736,6 @@ img {
         height: 200px;
     }
 
-    .home__img,
     .about__img {
         width: 170px;
     }
@@ -809,10 +833,6 @@ img {
         border-width: 8px;
     }
 
-    .home__img {
-        width: 340px;
-    }
-
     .home__social {
         left: -4rem;
     }
@@ -907,22 +927,8 @@ img {
     }
 
     .footer__container {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-    }
-
-    .footer__logo {
-        font-size: var(--h2-font-size);
-        justify-self: flex-start;
-        margin-bottom: 0;
-    }
-
-    .footer__links {
-        column-gap: 3rem;
-    }
-
-    .footer__social {
-        justify-self: flex-end;
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .scrollup {
