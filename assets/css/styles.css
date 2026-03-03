@@ -473,7 +473,8 @@ img {
 
 .projects__data .button {
     justify-self: center;
-    background-color: hsla(var(--hue), 8%, 8%, 0.4);
+    background-color: var(--first-color);
+    color: var(--black-color);
     margin-top: 0.5rem;
 }
 
@@ -746,6 +747,18 @@ img {
 
     .projects__data .button {
         padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Adjust home social icons on small screens */
+@media screen and (max-width: 575px) {
+    .home__social {
+        position: static;
+        grid-auto-flow: column;
+        justify-content: center;
+        column-gap: 1.5rem;
+        row-gap: 0;
+        margin-top: 1.5rem;
     }
 }
 
